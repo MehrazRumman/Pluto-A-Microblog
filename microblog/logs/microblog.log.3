@@ -1,0 +1,105 @@
+2023-04-11 16:11:55,255 INFO: Microblog startup [in /home/keai33/Flask___Mega/microblog/app/__init__.py:75]
+2023-04-11 16:11:58,759 ERROR: Exception on /auth/login [GET] [in /home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py:1744]
+Traceback (most recent call last):
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/keai33/Flask___Mega/microblog/app/auth/routes.py", line 28, in login
+    return render_template('auth/login.html', title=_('Sign In'), form=form)
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/keai33/Flask___Mega/microblog/app/templates/auth/login.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/keai33/Flask___Mega/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block 'body'
+    {% block navbar %}
+  File "/home/keai33/Flask___Mega/microblog/app/templates/base.html", line 17, in block 'navbar'
+    <a class="navbar-brand" href="{{ url_for('index') }}">"Pluto" A Microblog</a>
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/werkzeug/routing/map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2023-04-11 16:11:59,042 ERROR: Exception on /favicon.ico [GET] [in /home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py:1744]
+Traceback (most recent call last):
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 1788, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 1770, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/ctx.py", line 351, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/werkzeug/routing/map.py", line 624, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 2528, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 1669, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 1609, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+  File "/home/keai33/Flask___Mega/microblog/app/errors/handlers.py", line 8, in not_found_error
+    return render_template('errors/404.html'), 404
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/keai33/Flask___Mega/microblog/app/templates/errors/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/keai33/Flask___Mega/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block 'body'
+    {% block navbar %}
+  File "/home/keai33/Flask___Mega/microblog/app/templates/base.html", line 17, in block 'navbar'
+    <a class="navbar-brand" href="{{ url_for('index') }}">"Pluto" A Microblog</a>
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 2034, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/flask/app.py", line 2023, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "/home/keai33/Flask___Mega/venv/lib/python3.8/site-packages/werkzeug/routing/map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2023-04-11 16:17:11,582 INFO: Microblog startup [in /home/keai33/Flask___Mega/microblog/app/__init__.py:75]
+2023-04-11 16:34:22,038 INFO: Microblog startup [in /home/keai33/Flask___Mega/microblog/app/__init__.py:78]
+2023-04-11 16:37:27,701 INFO: Microblog startup [in /home/keai33/Flask___Mega/microblog/app/__init__.py:78]
+2023-04-11 16:48:58,150 INFO: Microblog startup [in /home/keai33/Flask___Mega/microblog/app/__init__.py:78]
+2023-04-11 16:53:17,476 INFO: Microblog startup [in /home/keai33/Flask___Mega/microblog/app/__init__.py:78]
+2023-04-11 16:53:24,532 INFO: Microblog startup [in /home/keai33/Flask___Mega/microblog/app/__init__.py:78]
+2023-04-11 17:00:57,348 INFO: Microblog startup [in /home/keai33/Flask___Mega/microblog/app/__init__.py:78]
